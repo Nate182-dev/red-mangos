@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Red Mango</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #050505;
+      color: #ffffff;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .brand span {
+      color: #a1a1aa;
+      font-weight: 400;
+      font-size: 0.85rem;
+      display: block;
+      margin-top: 1px;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: #a1a1aa;
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .donate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(90deg, #9945FF, #14F195);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s, opacity 0.15s;
+    }
+
+    .donate-btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+    }
+
+    /* Cards */
+    .card {
+      background: #111111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #71717a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    /* Progress */
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .progress-amount {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .progress-amount span {
+      color: #14F195;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #222;
+      border-radius: 99px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #9945FF, #14F195);
+      border-radius: 99px;
+      transition: width 0.8s ease;
+    }
+
+    .progress-sub {
+      font-size: 0.85rem;
+      color: #71717a;
+    }
+
+    .mango-rocket {
+      font-size: 28px;
+      margin-top: 8px;
+    }
+
+    /* Wallet */
+    .wallet-box {
+      background: #0a0a0a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 14px;
+      font-family: monospace;
+      font-size: 0.9rem;
+      word-break: break-all;
+      color: #e4e4e7;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .copy-btn {
+      width: 100%;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .copy-btn:hover {
+      background: #222;
+    }
+
+    .copied {
+      color: #14F195;
+      font-size: 0.85rem;
+      margin-top: 8px;
+      display: none;
+    }
+
+    /* Twitter */
+    .twitter {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #a1a1aa;
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-top: 8px;
+    }
+
+    .twitter:hover {
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #52525b;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">🥭</div>
+      <div class="brand">
+        The Red Mango
+        <span>Powered by Solana</span>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Support the mission.<br><span>Fuel the future.</span></h1>
+      <p>The Red Mango is building fun, useful, and community-first experiences on Solana.</p>
+      <button class="donate-btn" onclick="document.getElementById('wallet').scrollIntoView({behavior:'smooth'})">
+        <svg width="18" height="18" viewBox="0 0 397.7 311.7" fill="white">
+          <path d="M64.6 237.9c2.4-2.4 5.7-3.8 9.2-3.8h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1l62.7-62.7zM64.6 3.8C67.1 1.4 70.4 0 73.8 0h317.4c5.8 0 8.7 7 4.6 11.1l-62.7 62.7c-2.4 2.4-5.7 3.8-9.2 3.8H6.5c-5.8 0-8.7-7-4.6-11.1L64.6 3.8zM333.1 120.1c-2.4-2.4-5.7-3.8-9.2-3.8H6.5c-5.8 0-8.7 7-4.6 11.1l62.7 62.7c2.4 2.4 5.7 3.8 9.2 3.8h317.4c5.8 0 8.7-7 4.6-11.1l-62.7-62.7z"/>
+        </svg>
+        Donate SOL
+      </button>
+    </section>
+
+    <!-- Progress -->
+    <div class="card">
+      <div class="card-label">Funding Progress</div>
+      <div class="progress-header">
+        <div class="progress-amount" id="progressText">0.00 <span>/ 1 SOL</span></div>
+        <div class="mango-rocket">🥭🚀</div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar"></div>
+      </div>
+      <div class="progress-sub">Help us reach our goal of 1 SOL</div>
+    </div>
+
+    <!-- Wallet -->
+    <div class="card" id="wallet">
+      <div class="card-label">Wallet Address</div>
+      <div class="wallet-box" onclick="copyAddress()">
+        79mKAmddMZ6RaEeop5w1WfD6tZaLBHybdgJQycJpRGiD
+      </div>
+      <button class="copy-btn" onclick="copyAddress()">Copy Address</button>
+      <div class="copied" id="copiedMsg">✓ Address copied!</div>
+    </div>
+
+    <!-- Twitter -->
+    <a class="twitter" href="https://x.com/the_redmango?s=11" target="_blank">
+      𝕏 Follow @the_redmango
+    </a>
+
+    <footer>
+      The Red Mango • Built on Solana
+    </footer>
+  </div>
+
+  <script>
+    const WALLET = "79mKAmddMZ6RaEeop5w1WfD6tZaLBHybdgJQycJpRGiD";
+    const GOAL = 1;
+
+    function copyAddress() {
+      navigator.clipboard.writeText(WALLET).then(() => {
+        const msg = document.getElementById("copiedMsg");
+        msg.style.display = "block";
+        setTimeout(() => msg.style.display = "none", 2000);
+      });
+    }
+
+    async function updateBalance() {
+      try {
+        const res = await fetch("https://api.mainnet-beta.solana.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            jsonrpc: "2.0",
+            id: 1,
+            method: "getBalance",
+            params: [WALLET]
+          })
+        });
+        const data = await res.json();
+        const sol = (data.result?.value || 0) / 1e9;
+        const pct = Math.min((sol / GOAL) * 100, 100);
+
+        document.getElementById("progressText").innerHTML = 
+          `${sol.toFixed(2)} <span>/ 1 SOL</span>`;
+        document.getElementById("progressBar").style.width = pct + "%";
+      } catch (e) {
+        console.log("Could not fetch balance");
+      }
+    }
+
+    updateBalance();
+    setInterval(updateBalance, 30000);
+  </script>
+</body>
+</html>
